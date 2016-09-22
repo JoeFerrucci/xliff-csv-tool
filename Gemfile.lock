@@ -1,0 +1,27 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    byebug (9.0.5)
+    crass (1.0.2)
+    mini_portile2 (2.1.0)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
+    nokogumbo (1.4.9)
+      nokogiri
+    pkg-config (1.1.7)
+    sanitize (4.3.0)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.4.4)
+      nokogumbo (~> 1.4.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  byebug
+  nokogiri
+  sanitize
+
+BUNDLED WITH
+   1.12.5
