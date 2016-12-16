@@ -55,7 +55,13 @@ builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') { |xml|
                         tu= data[1]
                         xml.send(:"trans-unit",:id => tu['id']) {
                             xml.source data[2]
-                            xml.target data[3]
+
+                            if data[3] != nil 
+                                xml.target data[3]
+                            else
+                                xml.target data[2]
+                            end 
+
                             if data[4] == nil
                                 xml.note "No comment provided by engineer"
                             else
