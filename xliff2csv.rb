@@ -35,7 +35,7 @@ class Hash
     end
 end
 
-CSV.open( "translation_#{csv_filename}.csv","w+",{:col_sep => ","}) do |csv|
+CSV.open( "#{csv_filename}.csv","w+",{:col_sep => ","}) do |csv|
     csv << ["Filename","File_params","Trans-unit_params","same","Source","sc","Target","Note","tc"]
     files.each do |file|
         f = File.open(file)
