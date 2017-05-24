@@ -45,6 +45,7 @@ CSV.foreach( csv_filename ,{:headers => :string,:col_sep => ",",:encoding => "bo
     filescollection[file_params["original"]] += [ [file_params,tu_params,row["Source"],row["Target"],row["Note"]] ]
 end
 
+
 builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') { |xml|
     xml.xliff(:version => "1.2",:xmlns => "urn:oasis:names:tc:xliff:document:1.2") {
         filescollection.each do |file,content|
@@ -76,6 +77,6 @@ builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') { |xml|
 }
 
 #save the file with builder.to_xml
-File.open(filename,'w+') do |f|
+File.open(folder + "/" + filename,'w+') do |f|
     f.puts builder.to_xml
 end
